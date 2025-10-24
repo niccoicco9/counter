@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.button-container {
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: center;
+
+  @include mobile {
+    @include flex-column;
+  }
+}

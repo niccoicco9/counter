@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.button {
+  @include button-base;
+
+  &:disabled {
+    @include button-disabled;
+  }
+
+  &--increment {
+    background-color: $primary-blue;
+    color: $text-white;
+
+    &:hover:not(:disabled) {
+      background-color: $primary-blue-hover;
+      @include button-hover;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $primary-blue-active;
+      @include button-active;
+    }
+
+    &:disabled {
+      background-color: $primary-blue-disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  &--reset {
+    background-color: $primary-orange;
+    color: $text-white;
+
+    &:hover:not(:disabled) {
+      background-color: $primary-orange-hover;
+      @include button-hover;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $primary-orange-active;
+      @include button-active;
+    }
+  }
+}

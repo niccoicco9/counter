@@ -40,7 +40,6 @@ The app integrates with the Chuck Norris API (https://api.chucknorris.io/) to fe
 - npm or yarn
 
 ### Installation
-
 1. Clone the repository:
 ```bash
 git clone <repository-url>
