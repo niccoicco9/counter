@@ -1,73 +1,90 @@
-# React + TypeScript + Vite
+# Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React counter application built with Vite and TypeScript, featuring Chuck Norris API integration.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Counter Functionality**: Increment and reset buttons
+- **Visual Feedback**: Different colors for buttons in normal and pressed states
+- **Zero State**: Special color when counter is at zero
+- **Animations**: Smooth bounce animation when counter changes
+- **Status Indicator**: Shows current counter state
+- **Chuck Norris API Integration**: Fetches random jokes on each increment
+- **Joke Display**: Beautiful gradient container for displaying jokes
+- **Loading States**: Button shows loading state while fetching jokes
+- **Accessibility**: ARIA labels and screen reader support
+- **Responsive Design**: Works on desktop and mobile devices
 
-## React Compiler
+## Requirements Met
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✅ Button with label "Increment"  
+✅ Button with label "Reset"  
+✅ Number prefixed by "Counter:"  
+✅ Initial value set to 0  
+✅ Increment increases counter by 1  
+✅ Reset resets counter to 0  
+✅ Different colors for buttons in normal and pressed states  
+✅ Different color for counter when it's 0  
+✅ API Integration: Chuck Norris jokes on increment  
+✅ Text element with specific CSS styling for jokes  
 
-## Expanding the ESLint configuration
+## API Integration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The app integrates with the Chuck Norris API (https://api.chucknorris.io/) to fetch random jokes when the increment button is clicked. The API response is parsed to extract the joke text from the "value" field.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (version 16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd counter
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues automatically
+- `npm run type-check` - Run TypeScript type checking
+
+## Styling
+
+The app includes custom CSS with:
+- **Increment Button**: Blue color scheme with hover and active states
+- **Reset Button**: Orange color scheme with hover and active states
+- **Counter Display**: Red when at 0, green when above 0
+- **Joke Container**: Beautiful gradient background with custom typography
+- **Responsive Design**: Mobile-friendly layout
+
+## Technologies Used
+
+- React 19.1.1
+- TypeScript 5.9.3
+- Vite 7.1.7
+- CSS3 with custom styling
+- Chuck Norris API integration
+
+## License
+
+This project is licensed under the MIT License.
