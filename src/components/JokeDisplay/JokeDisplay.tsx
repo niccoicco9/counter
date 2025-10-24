@@ -9,7 +9,6 @@ interface JokeDisplayProps {
 const JokeDisplay: React.FC<JokeDisplayProps> = ({ jokeState }) => {
   const { joke, isLoading } = jokeState;
 
-  // Non mostrare nulla se non c'è joke e non sta caricando
   if (!joke && !isLoading) {
     return null;
   }

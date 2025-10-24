@@ -1,6 +1,5 @@
 @import 'variables';
 
-// Button mixins
 @mixin button-base {
   padding: $spacing-md $spacing-xl;
   font-size: $font-size-md;
@@ -26,7 +25,6 @@
   transform: none !important;
 }
 
-// Animation mixins
 @mixin bounce-animation {
   animation: bounce $transition-bounce;
 }
@@ -40,14 +38,12 @@
   }
 }
 
-// Responsive mixins
 @mixin mobile {
   @media (max-width: $breakpoint-mobile) {
     @content;
   }
 }
 
-// Flexbox mixins
 @mixin flex-center {
   display: flex;
   align-items: center;

@@ -17,8 +17,6 @@ const JokeSkeleton = () => (
 );
 
 const LazyJokeDisplay: React.FC<LazyJokeDisplayProps> = ({ jokeState }) => {
-  // Mostra lo skeleton solo se c'è una joke o se sta caricando
-  // Non mostrare nulla al caricamento iniziale della pagina
   if (!jokeState.joke && !jokeState.isLoading) {
     return null;
   }
