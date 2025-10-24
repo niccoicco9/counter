@@ -9,6 +9,7 @@ interface JokeDisplayProps {
 const JokeDisplay: React.FC<JokeDisplayProps> = ({ jokeState }) => {
   const { joke, isLoading } = jokeState;
 
+  // Non mostrare nulla se non c'è joke e non sta caricando
   if (!joke && !isLoading) {
     return null;
   }
@@ -16,9 +17,17 @@ const JokeDisplay: React.FC<JokeDisplayProps> = ({ jokeState }) => {
   return (
     <div className="joke-display">
       <h3 className="joke-display__title">Chuck Norris Joke:</h3>
-      <p className="joke-display__text">
-        {isLoading ? 'Loading joke...' : joke}
-      </p>
+      <div className="joke-display__content">
+        {isLoading ? (
+          <div className="joke-display__loading">
+            <div className="joke-display__loading-dot"></div>
+            <div className="joke-display__loading-dot"></div>
+            <div className="joke-display__loading-dot"></div>
+          </div>
+        ) : (
+          <p className="joke-display__text">{joke}</p>
+        )}
+      </div>
     </div>
   );
 };

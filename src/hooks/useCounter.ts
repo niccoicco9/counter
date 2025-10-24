@@ -1,14 +1,22 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo, useRef } from 'react';
 import type { CounterState } from '../types';
 import { ANIMATION_DURATION } from '../utils/constants';
 
 export const useCounter = (initialValue: number = 0) => {
   const [count, setCount] = useState(initialValue);
   const [isAnimating, setIsAnimating] = useState(false);
+  const timeoutRef = useRef<number | null>(null);
 
   const triggerAnimation = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    
     setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
+    timeoutRef.current = setTimeout(() => {
+      setIsAnimating(false);
+      timeoutRef.current = null;
+    }, ANIMATION_DURATION);
   }, []);
 
   const increment = useCallback(() => {
@@ -21,10 +29,10 @@ export const useCounter = (initialValue: number = 0) => {
     triggerAnimation();
   }, [initialValue, triggerAnimation]);
 
-  const counterState: CounterState = {
+  const counterState: CounterState = useMemo(() => ({
     count,
     isAnimating,
-  };
+  }), [count, isAnimating]);
 
   return {
     counterState,

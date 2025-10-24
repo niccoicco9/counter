@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.joke-skeleton {
+  margin-top: $spacing-xl;
+  padding: $spacing-lg;
+  background: $gradient-joke;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  &__title {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    width: 60%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+  }
+
+  &__text {
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    width: 100%;
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+
+    &--short {
+      width: 70%;
+    }
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
