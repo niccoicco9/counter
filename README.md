@@ -17,16 +17,16 @@ A simple React counter application built with Vite and TypeScript, featuring Chu
 
 ## Requirements Met
 
-✅ Button with label "Increment"  
-✅ Button with label "Reset"  
-✅ Number prefixed by "Counter:"  
-✅ Initial value set to 0  
-✅ Increment increases counter by 1  
-✅ Reset resets counter to 0  
-✅ Different colors for buttons in normal and pressed states  
-✅ Different color for counter when it's 0  
-✅ API Integration: Chuck Norris jokes on increment  
-✅ Text element with specific CSS styling for jokes  
+Button with label "Increment"  
+Button with label "Reset"  
+Number prefixed by "Counter:"  
+Initial value set to 0  
+Increment increases counter by 1  
+Reset resets counter to 0  
+Different colors for buttons in normal and pressed states  
+Different color for counter when it's 0  
+API Integration: Chuck Norris jokes on increment  
+Text element with specific CSS styling for jokes  
 
 ## API Integration
 
