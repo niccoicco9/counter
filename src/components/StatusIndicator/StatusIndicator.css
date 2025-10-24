@@ -1,0 +1,10 @@
+.status-indicator {
+  margin-bottom: 20px;
+  min-height: 20px;
+}
+
+.status-indicator__text {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
