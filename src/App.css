@@ -119,14 +119,19 @@ body {
   color: white;
 }
 
-.increment-button:hover {
+.increment-button:hover:not(:disabled) {
   background-color: #2980b9; /* Darker blue on hover */
   transform: translateY(-2px);
 }
 
-.increment-button:active {
+.increment-button:active:not(:disabled) {
   background-color: #1f5f8b; /* Even darker blue when pressed */
   transform: translateY(0);
+}
+
+.increment-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
 }
 
 /* Reset button - Orange theme */
@@ -135,14 +140,41 @@ body {
   color: white;
 }
 
-.reset-button:hover {
+.reset-button:hover:not(:disabled) {
   background-color: #d35400; /* Darker orange on hover */
   transform: translateY(-2px);
 }
 
-.reset-button:active {
+.reset-button:active:not(:disabled) {
   background-color: #a04000; /* Even darker orange when pressed */
   transform: translateY(0);
+}
+
+/* Joke container styles */
+.joke-container {
+  margin-top: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: left;
+}
+
+.joke-title {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.joke-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #f8f9fa;
+  text-align: center;
 }
 
 /* Responsive design */
@@ -163,5 +195,18 @@ body {
   
   .counter-label, .counter-value {
     font-size: 1.5rem;
+  }
+  
+  .joke-container {
+    margin-top: 20px;
+    padding: 15px;
+  }
+  
+  .joke-title {
+    font-size: 1.1rem;
+  }
+  
+  .joke-text {
+    font-size: 0.9rem;
   }
 }

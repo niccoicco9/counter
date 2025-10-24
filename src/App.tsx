@@ -1,19 +1,46 @@
 import { useState } from 'react'
 import './App.css'
 
+interface ChuckNorrisJoke {
+  value: string
+}
+
 function App() {
   const [count, setCount] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [joke, setJoke] = useState<string>('')
+  const [isLoadingJoke, setIsLoadingJoke] = useState(false)
 
-  const handleIncrement = () => {
+  const fetchChuckNorrisJoke = async (): Promise<void> => {
+    try {
+      setIsLoadingJoke(true)
+      const response = await fetch('https://api.chucknorris.io/jokes/random')
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const data: ChuckNorrisJoke = await response.json()
+      setJoke(data.value)
+    } catch (error) {
+      console.error('Error fetching Chuck Norris joke:', error)
+      setJoke('Failed to fetch joke. Please try again.')
+    } finally {
+      setIsLoadingJoke(false)
+    }
+  }
+
+  const handleIncrement = async () => {
     setIsAnimating(true)
     setCount(count + 1)
     setTimeout(() => setIsAnimating(false), 300)
+    
+    // Fetch Chuck Norris joke
+    await fetchChuckNorrisJoke()
   }
 
   const handleReset = () => {
     setIsAnimating(true)
     setCount(0)
+    setJoke('')
     setTimeout(() => setIsAnimating(false), 300)
   }
 
@@ -42,9 +69,9 @@ function App() {
             className="increment-button" 
             onClick={handleIncrement}
             aria-label="Increment counter by 1"
-            disabled={isAnimating}
+            disabled={isAnimating || isLoadingJoke}
           >
-            Increment
+            {isLoadingJoke ? 'Loading...' : 'Increment'}
           </button>
           
           <button 
@@ -56,6 +83,13 @@ function App() {
             Reset
           </button>
         </div>
+
+        {joke && (
+          <div className="joke-container">
+            <h3 className="joke-title">Chuck Norris Joke:</h3>
+            <p className="joke-text">{joke}</p>
+          </div>
+        )}
       </div>
     </div>
   )
