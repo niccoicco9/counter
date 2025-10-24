@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.status-indicator {
+  margin-bottom: $spacing-lg;
+  min-height: $spacing-lg;
+
+  &__text {
+    font-size: $font-size-xs;
+    color: $text-secondary;
+    font-style: italic;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { CounterState } from '../../types';
-import './StatusIndicator.css';
+import './StatusIndicator.scss';
 
 interface StatusIndicatorProps {
   counterState: CounterState;

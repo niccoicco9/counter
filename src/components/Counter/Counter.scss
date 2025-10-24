@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.counter {
+  margin-bottom: $spacing-lg;
+
+  &__display {
+    @include flex-center;
+    gap: $spacing-sm;
+  }
+
+  &__label {
+    font-size: $font-size-xxl;
+    color: $text-primary;
+  }
+
+  &__value {
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    transition: all $transition-fast;
+    display: inline-block;
+
+    &--animate {
+      @include bounce-animation;
+    }
+
+    &--zero {
+      color: $counter-red;
+    }
+
+    &:not(.counter__value--zero) {
+      color: $counter-green;
+    }
+  }
+}

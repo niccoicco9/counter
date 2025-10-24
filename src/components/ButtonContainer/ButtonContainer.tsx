@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './ButtonContainer.css';
+import './ButtonContainer.scss';
 
 interface ButtonContainerProps {
   onIncrement: () => void;

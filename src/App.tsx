@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Counter from './components/Counter/Counter';
 import StatusIndicator from './components/StatusIndicator/StatusIndicator';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';

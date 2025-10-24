@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.joke-display {
+  margin-top: $spacing-xl;
+  padding: $spacing-lg;
+  background: $gradient-joke;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-md;
+  color: $text-white;
+  text-align: left;
+
+  &__title {
+    margin: 0 0 $spacing-md 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $text-white;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    font-style: italic;
+    color: $text-light;
+    text-align: center;
+  }
+}

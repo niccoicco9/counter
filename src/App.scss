@@ -1,0 +1,24 @@
+@import './styles/variables';
+@import './styles/mixins';
+
+.app {
+  text-align: center;
+  background: $background-white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xxl;
+  box-shadow: $shadow-sm;
+  max-width: 500px;
+  width: 100%;
+
+  h1 {
+    color: $text-primary;
+    margin-bottom: $spacing-xl;
+    font-size: $font-size-xxxl;
+  }
+
+  @include mobile {
+    h1 {
+      font-size: $font-size-xxl;
+    }
+  }
+}

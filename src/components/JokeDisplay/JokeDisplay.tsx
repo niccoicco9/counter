@@ -1,6 +1,6 @@
 import React from 'react';
 import type { JokeState } from '../../types';
-import './JokeDisplay.css';
+import './JokeDisplay.scss';
 
 interface JokeDisplayProps {
   jokeState: JokeState;
