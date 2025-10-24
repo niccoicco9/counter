@@ -40,7 +40,18 @@ body {
 
 /* Counter display */
 .counter-display {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.status-indicator {
+  margin-bottom: 20px;
+  min-height: 20px;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
 }
 
 .counter-label {
@@ -52,7 +63,21 @@ body {
 .counter-value {
   font-size: 2rem;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.counter-value.animate {
+  animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .counter-value.zero {
@@ -80,6 +105,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 120px;
+}
+
+.increment-button:disabled, .reset-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
 }
 
 /* Increment button - Blue theme */

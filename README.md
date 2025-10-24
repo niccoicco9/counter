@@ -7,6 +7,9 @@ A simple React counter application built with Vite and TypeScript.
 - **Counter Functionality**: Increment and reset buttons
 - **Visual Feedback**: Different colors for buttons in normal and pressed states
 - **Zero State**: Special color when counter is at zero
+- **Animations**: Smooth bounce animation when counter changes
+- **Status Indicator**: Shows current counter state
+- **Accessibility**: ARIA labels and screen reader support
 - **Responsive Design**: Works on desktop and mobile devices
 
 ## Requirements Met
